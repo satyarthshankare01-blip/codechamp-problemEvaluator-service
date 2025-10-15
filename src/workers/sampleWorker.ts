@@ -3,7 +3,7 @@ import { Worker , Job } from "bullmq";
 import redisConnection from "../config/redisConfig.js";
 import sampleJob from "../jobs/samplejob.js";
 
-export default async function ( queuename : string ) {
+export default  function  sampleWorker ( queuename : string ) {
   
     new Worker (  
         queuename , 
