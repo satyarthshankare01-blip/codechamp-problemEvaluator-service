@@ -8,7 +8,7 @@ const redisConfig = {
     host : serverConfig.REDIS_HOST
 };
 
-const redisConnection = new Redis (redisConfig);
+const redisConnection = new Redis(redisConfig);
 
 export default redisConnection ;
 
