@@ -5,7 +5,8 @@ import Redis from "ioredis";
 const redisConfig = {
 
     port : serverConfig.REDIS_PORT,
-    host : serverConfig.REDIS_HOST
+    host : serverConfig.REDIS_HOST,
+    maxRetriesPerRequest: null
 };
 
 const redisConnection = new Redis(redisConfig);

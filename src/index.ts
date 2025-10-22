@@ -1,11 +1,16 @@
 import express from 'express';
-import type { Express , Request , Response } from 'express';
+import bodyParser from "body-parser";
+import type { Express } from 'express';
 import serverConfig from "./config/serverConfig.js";
 import apiRouter from "./routes/index.js";
 import sampleWorker from './workers/sampleWorker.js';
-import sampleProducer from "./producer/sampleQueueProducer.js"
 import serverAdapter from './config/bullBoardConfig.js';
 const app: Express = express();
+
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
+app.use(bodyParser.text());
+
 
 app.use('/api' , apiRouter )
 
@@ -16,11 +21,11 @@ app.listen(serverConfig.PORT , () => {
      
   sampleWorker('sampleQueue');
   
-  sampleProducer( 'sampleJob' , {
+  /*sampleProducer( 'sampleJob' , {
     name: "Sanket",
     company: "Microsoft",
     position: "SDE 2 L61",
     locatiion: "Remote | BLR | Noida"
-  })
+  })*/
 
 });

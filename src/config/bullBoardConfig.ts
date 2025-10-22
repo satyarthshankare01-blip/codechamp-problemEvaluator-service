@@ -14,5 +14,4 @@ createBullBoard( {
     queues : [ new BullMQAdapter(sampleQueue)],
     serverAdapter
 })
-
 export default serverAdapter ;
